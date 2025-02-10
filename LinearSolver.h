@@ -20,27 +20,17 @@ struct IterativeSolver
 
 	}
 
-	void solveGS(double* f, double* f0, double* bb, int NN, SparseMatrix& M, int limit_ = 0)
+	void solveGS(double* f, double* f0, double* bb, int NN, SparseMatrix& M)
 	{
-		if (limit_ != 0) limit = limit_;
-		k = 0;
-		//limit = 300;
-		//for (k = 0; k < 100; k++)
-		while (true)
+		for (k = 1; k < 100000; k++)
 		{
 			k++;
-			if (k > 20000)
-			{
-				//std::cout << "limit" << endl;
-				break;
-			}
 			double s = 0;
 			for (int j = 0; j < NN; j++)
 			{
 				s = M.line(j, f);
 				f[j] = f[j] + (bb[j] - s) / M[j][j];
 			}
-
 
 			double max = 0;
 			double dif;
@@ -59,7 +49,6 @@ struct IterativeSolver
 	}
 	void solveJacobi(double* f, double* f0, double* bb, int NN, SparseMatrix& M)
 	{
-		k = 0;
 		for (k = 1; k < 100000; k++)
 		{
 			double s = 0;
@@ -68,7 +57,6 @@ struct IterativeSolver
 				s = M.line(j, f0);
 				f[j] = f0[j] + (bb[j] - s) / M[j][j];
 			}
-
 
 			double max = 0;
 			double dif;
@@ -82,7 +70,6 @@ struct IterativeSolver
 				f0[j] = f[j];
 
 			if (max < eps_iter)	break;
-
 			if (k % 1000 == 0) cout << "host k = " << k << ", eps = " << max << endl;
 		}
 

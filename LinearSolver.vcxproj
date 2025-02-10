@@ -127,10 +127,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="FromOuterSparse\SparseMatrix.cpp" />
+    <ClCompile Include="FromOuterSparse\SparseMatrix_IO.cpp" />
     <ClCompile Include="LinearSolver.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="FromOuterSparse\SparseMatrix.h" />
     <ClInclude Include="LinearSolver.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

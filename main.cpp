@@ -1,6 +1,8 @@
 
 
 #include <iostream>
+#include "LinearSolver.h"
+
 
 int main()
 {

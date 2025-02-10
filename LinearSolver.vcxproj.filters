@@ -21,9 +21,18 @@
     <ClCompile Include="LinearSolver.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="FromOuterSparse\SparseMatrix.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FromOuterSparse\SparseMatrix_IO.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="LinearSolver.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FromOuterSparse\SparseMatrix.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
